@@ -1,6 +1,11 @@
 @import "variables.less";
 @import "mixins.less";
 
+@font-face {
+  font-family: 'Lato-light';
+  src: url('../fonts/Lato-Lig.ttf') format('truetype');
+}
+
 // Global Components
 html,
 body {
@@ -9,7 +14,7 @@ body {
 }
 
 body {
-    .serif-font;
+    font-family:"Lato-light";
 }
 
 hr {
@@ -31,14 +36,14 @@ a {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    .sans-serif-font;
-}
+//h1,
+//h2,
+//h3,
+//h4,
+//h5,
+//h6 {
+//    .sans-serif-font;
+//}
 
 p {
     font-size: 16px;
@@ -50,13 +55,17 @@ p {
     background-color: @theme-primary;
 }
 
+.bg-secondary {
+    background-color: @theme-secondary;
+}
+
 .bg-dark {
     background-color: @theme-dark;
     color: white;
 }
 
 .text-faded {
-    color: fade(white, 70%);
+    color: fade(@theme-text, 70%);
 }
 
 section {
@@ -159,7 +168,7 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
+    background-image: url('../img/mountain_gray.png');
     text-align: center;
     color: white;
     .header-content {
@@ -346,3 +355,4 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: @theme-dark;
 }
+
